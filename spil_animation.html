@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flyverfiskegrillen</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="spil.css" />
+  </head>
+
+  <body>
+    <div id="header">
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li>
+            <a href="index.html" class="home">Home</a>
+          </li>
+          <div class="nav_div">
+            <li>
+              <a href="projektportfolio.html">Projektportfolio</a>
+            </li>
+            <li>
+              <a href="om_mig.html">Om mig</a>
+            </li>
+          </div>
+        </ul>
+
+        <button id="burger_java" class="burger">
+          <div class="icon_open">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-menu-2"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#2c3e50"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 6l16 0" />
+              <path d="M4 12l16 0" />
+              <path d="M4 18l16 0" />
+            </svg>
+          </div>
+          <div class="icon_close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-x"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#2c3e50"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
+            </svg>
+          </div>
+        </button>
+      </nav>
+    </div>
+    <div id="main">
+      <h1>Velkommen til Flyverfiskegrillen</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque non
+        consectetur optio. Odit corrupti labore consequuntur veniam vitae, sint
+        accusantium. Reiciendis quaerat iusto nostrum iste incidunt ipsam
+        assumenda culpa et!
+      </p>
+      <div id="screen">
+        <div id="game">
+          <div id="game_background"></div>
+          <div id="game_elements">
+            <div id="fisk_container">
+              <div id="fisk_sprite"></div>
+            </div>
+            <div id="fly_container">
+              <div id="fly_sprite"></div>
+            </div>
+          </div>
+
+          <div id="game_ui">
+            <div id="score_board"></div>
+            <div id="energy_board1"></div>
+            <div id="energy_board2"></div>
+            <div id="energy_board3"></div>
+            <div id="time_board"></div>
+          </div>
+        </div>
+
+        <div id="start">
+          <div id="play_knap"></div>
+        </div>
+        <div id="game_over">
+          <div id="spil_igen1"></div>
+        </div>
+        <div id="level_complete">
+          <div id="spil_igen2"></div>
+        </div>
+      </div>
+    </div>
+    <div id="footer"></div>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

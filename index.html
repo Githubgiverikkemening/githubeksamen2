@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+  </head>
+
+  <body>
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li>
+          <a href="index.html" class="home">Home</a>
+        </li>
+        <div class="nav_div">
+          <li>
+            <a href="projektportfolio.html">Projektportfolio</a>
+          </li>
+          <li>
+            <a href="om_mig.html">Om mig</a>
+          </li>
+        </div>
+      </ul>
+
+      <button id="burger_java" class="burger">
+        <div class="icon_open">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-menu-2"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#2c3e50"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4 6l16 0" />
+            <path d="M4 12l16 0" />
+            <path d="M4 18l16 0" />
+          </svg>
+        </div>
+        <div class="icon_close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-x"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#2c3e50"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+          </svg>
+        </div>
+      </button>
+    </nav>
+    <h1>Forside</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque non
+      consectetur optio. Odit corrupti labore consequuntur veniam vitae, sint
+      accusantium. Reiciendis quaerat iusto nostrum iste incidunt ipsam
+      assumenda culpa et!
+    </p>
+
+    <div id="lottieMusscroll" style="width: 300px; height: 300px"></div>
+    <script>
+      fetch("lottiemus.json")
+        .then((response) => response.json())
+        .then((data) => {
+          lottie.loadAnimation({
+            container: document.getElementById("lottieMusscroll"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: data,
+          });
+        })
+        .catch((error) => {
+          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
+        });
+    </script>
+
+    <div id="lottieKaffe" style="width: 300px; height: 300px"></div>
+    <script>
+      fetch("kaffetogo.json")
+        .then((response) => response.json())
+        .then((data) => {
+          lottie.loadAnimation({
+            container: document.getElementById("lottieKaffe"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: data,
+          });
+        })
+        .catch((error) => {
+          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
+        });
+    </script>
+
+    <div id="lottieFish" style="width: 500px; height: 500px"></div>
+    <script>
+      fetch("fish.json")
+        .then((response) => response.json())
+        .then((data) => {
+          lottie.loadAnimation({
+            container: document.getElementById("lottieFish"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: data,
+          });
+        })
+        .catch((error) => {
+          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
+        });
+    </script>
+    <footer>
+      <div class="footer_container">
+        <section id="social_overskrift"><h3>Socials</h3></section>
+
+        <section id="social_links">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/christian.franckkristensen"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com/franco__ramirez/">Instagram</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@christianfranckramirez"
+                >TikTok</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section id="copyrights">
+          <p>
+            &copy; 2024 Christian Franck Ramirez Kristensen. Alle rettigheder
+            forbeholdes.
+          </p>
+        </section>
+      </div>
+    </footer>
+    <script src="javascript.js"></script>
+  </body>
+</html>
