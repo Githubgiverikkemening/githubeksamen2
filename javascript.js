@@ -20,3 +20,36 @@ var animation = lottie.loadAnimation({
   autoplay: true,
   path: "kaffe.json",
 });
+
+window.addEventListener("load", startGame);
+
+function startGame() {
+  console.log("startGame");
+
+  document.querySelector("#time_board_sand").classList.add("timeglastimer");
+
+  document
+    .querySelector("#time_board_sand")
+    .addEventListener("animationend", endGame);
+}
+
+function endGame() {
+  console.log("endGame");
+
+  document
+    .querySelector("#time_board_sand")
+    .removeEventListener("animationend", endGame);
+
+  console.log("Tiden er gået");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const fiskContainer = document.getElementById("fisk_container");
+  const energyBoard2 = document.getElementById("energy_board2");
+
+  // Event listener for fisk_container
+  fiskContainer.addEventListener("click", function () {
+    // Sæt energy_board2 til at være usynlig
+    energyBoard2.style.display = "none";
+  });
+});
