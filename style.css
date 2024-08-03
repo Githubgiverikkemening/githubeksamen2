@@ -194,3 +194,26 @@ footer {
     grid-column: 2;
   }
 }
+
+.tema-beskrivelse {
+  padding: 20px;
+  margin: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.tema-beskrivelse h2 {
+  margin-bottom: 10px;
+}
+
+.tema-beskrivelse p {
+  flex: 1;
+}
+
+.tema-billede {
+  width: 550px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 5px;
+}
