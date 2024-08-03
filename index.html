@@ -63,67 +63,69 @@
         </span>
       </button>
     </nav>
-    <h1>Forside</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque non
-      consectetur optio. Odit corrupti labore consequuntur veniam vitae, sint
-      accusantium. Reiciendis quaerat iusto nostrum iste incidunt ipsam
-      assumenda culpa et!
-    </p>
+    <main class="forside">
+      <h1>Forside</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque non
+        consectetur optio. Odit corrupti labore consequuntur veniam vitae, sint
+        accusantium. Reiciendis quaerat iusto nostrum iste incidunt ipsam
+        assumenda culpa et!
+      </p>
 
-    <div id="lottieMusscroll" style="width: 300px; height: 300px"></div>
-    <script>
-      fetch("lottiemus.json")
-        .then((response) => response.json())
-        .then((data) => {
-          lottie.loadAnimation({
-            container: document.getElementById("lottieMusscroll"),
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            animationData: data,
+      <div id="lottieMusscroll" style="width: 300px; height: 300px"></div>
+      <script>
+        fetch("lottiemus.json")
+          .then((response) => response.json())
+          .then((data) => {
+            lottie.loadAnimation({
+              container: document.getElementById("lottieMusscroll"),
+              renderer: "svg",
+              loop: true,
+              autoplay: true,
+              animationData: data,
+            });
+          })
+          .catch((error) => {
+            console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
           });
-        })
-        .catch((error) => {
-          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
-        });
-    </script>
+      </script>
 
-    <div id="lottieKaffe" style="width: 300px; height: 300px"></div>
-    <script>
-      fetch("kaffetogo.json")
-        .then((response) => response.json())
-        .then((data) => {
-          lottie.loadAnimation({
-            container: document.getElementById("lottieKaffe"),
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            animationData: data,
+      <div id="lottieKaffe" style="width: 300px; height: 300px"></div>
+      <script>
+        fetch("kaffetogo.json")
+          .then((response) => response.json())
+          .then((data) => {
+            lottie.loadAnimation({
+              container: document.getElementById("lottieKaffe"),
+              renderer: "svg",
+              loop: true,
+              autoplay: true,
+              animationData: data,
+            });
+          })
+          .catch((error) => {
+            console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
           });
-        })
-        .catch((error) => {
-          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
-        });
-    </script>
+      </script>
 
-    <div id="lottieFish" style="width: 500px; height: 500px"></div>
-    <script>
-      fetch("fish.json")
-        .then((response) => response.json())
-        .then((data) => {
-          lottie.loadAnimation({
-            container: document.getElementById("lottieFish"),
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            animationData: data,
+      <div id="lottieFish" style="width: 500px; height: 500px"></div>
+      <script>
+        fetch("fish.json")
+          .then((response) => response.json())
+          .then((data) => {
+            lottie.loadAnimation({
+              container: document.getElementById("lottieFish"),
+              renderer: "svg",
+              loop: true,
+              autoplay: true,
+              animationData: data,
+            });
+          })
+          .catch((error) => {
+            console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
           });
-        })
-        .catch((error) => {
-          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
-        });
-    </script>
+      </script>
+    </main>
     <footer>
       <div class="footer_container">
         <section id="social_overskrift"><h3>Socials</h3></section>
