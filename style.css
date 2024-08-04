@@ -85,9 +85,12 @@ body {
   .navbar.open .burger .icon_close {
     display: block;
   }
-
-  /* FORSIDE HTML */
-  /*------*/
+}
+/* FORSIDE HTML */
+/*------*/
+.forside {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 /* OM MIG HTML */
 /*------*/
