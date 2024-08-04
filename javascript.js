@@ -11,30 +11,32 @@ function onBurgerMenuClick() {
   }
 }
 
-const fiskContainer = document.getElementById("fisk_container");
-const startButton = document.getElementById("startAnimation");
+document.addEventListener("DOMContentLoaded", () => {
+  const fiskContainer = document.getElementById("fisk_container");
 
-function setRandomStartPosition() {
-  const maxLeft = window.innerWidth - fiskContainer.offsetWidth;
-  const maxTop = window.innerHeight - fiskContainer.offsetHeight;
+  // Funktion til at sætte fisk_container på en tilfældig startposition
+  function setRandomStartPosition() {
+    const maxLeft = window.innerWidth - fiskContainer.offsetWidth;
 
-  const randomLeft = Math.random() * maxLeft;
-  const randomTop = Math.random() * maxTop;
+    // Generer en tilfældig vandret position inden for synligt område
+    const randomLeft = Math.random() * maxLeft;
 
-  fiskContainer.style.left = `${randomLeft}4px`;
-  fiskContainer.style.top = `${randomTop}10px`;
-}
+    // Sæt den initiale top til 0 for at starte fra toppen
+    fiskContainer.style.left = `${randomLeft}px`;
+    fiskContainer.style.top = `0px`;
+  }
 
-startButton.addEventListener("click", () => {
+  // Sæt fisk_container på en tilfældig position ved load
   setRandomStartPosition();
-  fiskContainer.style.animationPlayState = "running";
-  fiskContainer.classList.remove("hidden");
+
+  // Tilføj en klik-event listener til fisk_container for at få den til at forsvinde
+  fiskContainer.addEventListener("click", () => {
+    fiskContainer.classList.add("hidden"); // Gør containeren usynlig
+    fiskContainer.style.animationPlayState = "paused"; // Pause animationen
+    alert("Fisk container klikket!"); // Feedback til brugeren
+  });
 });
 
-fiskContainer.addEventListener("click", () => {
-  fiskContainer.classList.add("hidden");
-  fiskContainer.style.animationPlayState = "paused";
-});
 var animationContainer = ducument.getElementById("lottieKaffe");
 
 var animation = lottie.loadAnimation({

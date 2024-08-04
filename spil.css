@@ -28,6 +28,7 @@
   left: 0;
   background-image: url(game_screen.svg);
   background-size: cover;
+  /* display: none; */
 }
 
 #game_elements {
@@ -39,18 +40,12 @@
 }
 
 #fisk_container {
+  position: absolute;
   width: 30%;
+  height: 40%;
   aspect-ratio: 1/1;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-}
-#fisk_container {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100px;
-  height: 100px;
+  top: 80%;
+  left: 60%;
   background-color: blue;
   animation: moveFisk 5s linear infinite;
   cursor: pointer;
@@ -62,7 +57,7 @@
 
 @keyframes moveFisk {
   0% {
-    left: 0;
+    top: 0;
   }
   100% {
     left: 100%;
@@ -77,11 +72,30 @@
 }
 
 #fly_container {
-  width: 30%;
   aspect-ratio: 1/1;
   position: absolute;
   top: 20%;
   left: 25%;
+}
+
+#fly_container {
+  width: 40%;
+  height: 40%;
+
+  animation: moveFly 10s linear infinite paused;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes moveFly {
+  0% {
+    top: 0;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 #fly_sprite {

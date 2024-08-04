@@ -28,7 +28,7 @@ body {
 }
 
 .navbar a.home {
-  background-color: rgb(87, 202, 87);
+  background-color: rgb(102, 176, 237);
 }
 
 .navbar a:hover {
@@ -82,15 +82,44 @@ body {
     display: block;
   }
 }
+/* OM MIG HTML */
 
-#kontakt_link li {
-  margin: none;
-  padding: 1%;
-  list-style: none;
-  text-decoration: none;
-  position: relative;
+.about_container {
+}
+
+#om_mig {
   display: flex;
-  color: aliceblue;
+  justify-content: center; /* Center elements horizontally */
+  align-items: center; /* Center elements vertically */
+  flex-direction: column; /* Stack children vertically */
+}
+
+#lottieMusscroll {
+  margin-bottom: 20px; /* Add spacing below the animation */
+  justify-content: center;
+}
+
+.about_alt_tekst {
+  padding-right: 2%;
+}
+
+.about_alt_tekst {
+  padding-left: 5%;
+}
+
+#lottieMusscroll {
+  justify-content: center;
+}
+
+#cv_kaffe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 10%;
+  padding-left: 2%;
+}
+
+#cv li {
+  list-style-type: none;
 }
 
 footer {
@@ -146,7 +175,7 @@ footer {
 
 #social_links a:hover {
   background-color: #333333;
-  color: #ffd700;
+  color: rgb(102, 176, 237);
   transform: scale(1.2);
 }
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
   </head>
 
   <body>
@@ -65,8 +66,9 @@
     </nav>
     <main>
       <div class="about_container">
-        <div class="about_left">
+        <div class="about_alt_tekst">
           <section id="om_mig">
+            <div id="lottieMusscroll" style="width: 50px; height: 50px"></div>
             <h2>Om Mig</h2>
 
             <p>
@@ -74,7 +76,7 @@
               mig selv, og prøver på at omstille mit tidligere hverdagsliv samt
               rutiner til fordel for mit fysiske og mentale helbred. Det gør jeg
               fordi jeg for halvandet år siden, fik mig en hjernerystelse, med
-              senfølger der stadig påvirker mit liv.<br />
+              senfølger der stadig påvirker mit liv.<br /><br />
               Det er bl.a. problematikker som søvnbesvær, koncentrationsbesvær,
               manglende overblik og manglende motivation/overskud til at
               færdiggøre ting. Men derudover har jeg en stor interesse for at
@@ -82,32 +84,67 @@
             </p>
           </section>
 
-          <section id="cv">
-            <h2>CV</h2>
-            <div>
-              <h3>Uddannelse</h3>
-              <ul>
-                <li><strong>KEA</strong>, MultimedieDesigner - 2024</li>
-              </ul>
-              <h3>Erhvervserfaring</h3>
-              <ul>
-                <li><strong>KEA</strong>, Studerende - 2024</li>
-                <li><strong>Smukfest</strong>, SoMe Manager - 2022-2024</li>
-              </ul>
-              <h3>Færdigheder</h3>
-              <ul>
+          <div id="cv_kaffe">
+            <section id="cv">
+              <h2>CV</h2>
+              <div>
+                <h3>Uddannelse</h3>
+
+                <li>KEA - MultimedieDesigner - 2024</li>
+
+                <h3>Erhvervserfaring</h3>
+
+                <li>KEA - Studerende - 2024</li>
+                <li>Smukfest- SoMe Manager - 2022-2024</li>
+
+                <h3>Færdigheder</h3>
+
                 <li>Jeg har mange idéer.</li>
                 <li>Jeg spotter hurtigt tendenser.</li>
                 <li>Jeg får folk til at føle sig godt tilpas.</li>
-              </ul>
-            </div>
-          </section>
+              </div>
+            </section>
+
+            <div id="lottieKaffe" style="width: 400px; height: 400px"></div>
+          </div>
         </div>
         <div class="christian_container">
           <img src="christian.webp" alt="Christian" />
         </div>
       </div>
     </main>
+    <script>
+      fetch("lottiemus.json")
+        .then((response) => response.json())
+        .then((data) => {
+          lottie.loadAnimation({
+            container: document.getElementById("lottieMusscroll"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: data,
+          });
+        })
+        .catch((error) => {
+          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
+        });
+    </script>
+    <script>
+      fetch("kaffetogo.json")
+        .then((response) => response.json())
+        .then((data) => {
+          lottie.loadAnimation({
+            container: document.getElementById("lottieKaffe"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: data,
+          });
+        })
+        .catch((error) => {
+          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
+        });
+    </script>
     <footer>
       <div class="footer_container">
         <section id="social_overskrift"><h3>Socials</h3></section>
@@ -141,6 +178,7 @@
         </section>
       </div>
     </footer>
+
     <script src="javascript.js"></script>
   </body>
 </html>
