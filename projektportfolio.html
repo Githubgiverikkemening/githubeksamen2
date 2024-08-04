@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Eksamensprojekt - MultiMedieDesign</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
   </head>
@@ -83,6 +83,9 @@
       </button>
     </nav>
     <main>
+      <div class="center_mus">
+        <div id="lottieMusscroll" style="width: 50px; height: 50px"></div>
+      </div>
       <section id="temabeskrivelser" class="tema-beskrivelse">
         <h1>Temabeskrivelser:</h1>
         <p>
@@ -190,6 +193,7 @@
         />
       </section>
     </main>
+
     <footer>
       <div class="footer_container">
         <section id="social_overskrift"><h3>Socials</h3></section>
@@ -223,6 +227,22 @@
         </section>
       </div>
     </footer>
+    <script>
+      fetch("lottiemus.json")
+        .then((response) => response.json())
+        .then((data) => {
+          lottie.loadAnimation({
+            container: document.getElementById("lottieMusscroll"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: data,
+          });
+        })
+        .catch((error) => {
+          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
+        });
+    </script>
     <script src="javascript.js"></script>
   </body>
 </html>

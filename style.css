@@ -1,6 +1,10 @@
+/* BODY OG NAVBAR */
+/*------*/
 body {
-  margin: unset;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+  color: #333;
+  background: #f4f4f4;
 }
 
 .navbar {
@@ -81,15 +85,16 @@ body {
   .navbar.open .burger .icon_close {
     display: block;
   }
+
+  /* FORSIDE HTML */
+  /*------*/
 }
 /* OM MIG HTML */
-
-.about_container {
-}
+/*------*/
 
 #om_mig {
   display: flex;
-  justify-content: center; /* Center elements horizontally */
+
   align-items: center; /* Center elements vertically */
   flex-direction: column; /* Stack children vertically */
 }
@@ -122,6 +127,87 @@ body {
   list-style-type: none;
 }
 
+.christian_container img {
+  height: 80%;
+  width: 70%;
+  border-radius: 5%;
+}
+.christian_container {
+  text-align: center;
+}
+
+@media screen and (min-width: 950px) {
+  #lottieMusscroll {
+    display: none;
+  }
+  .about_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+  .about_alt_tekst {
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-template-rows: 1fr ifr;
+  }
+
+  #lottieKaffe {
+    width: 200px;
+    height: 200px;
+  }
+
+  #cv {
+    padding-left: none;
+  }
+
+  .christian_container img {
+    height: 80%;
+    width: 80%;
+    border-radius: 5%;
+    margin: 5%;
+  }
+
+  .christian_container {
+    grid-column: 2;
+    padding-top: 30%;
+  }
+}
+
+/* PROJEKTPORTFOLIO HTML*/
+/*------*/
+
+.center_mus {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 4%;
+}
+
+.tema-beskrivelse {
+  padding: 20px;
+  margin: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.tema-beskrivelse h2 {
+  margin-bottom: 10px;
+}
+
+.tema-beskrivelse p {
+  flex: 1;
+}
+
+.tema-billede {
+  width: 550px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+/* FOOTER */
+/*------*/
 footer {
   padding: 10px;
   font-size: small;
@@ -182,67 +268,4 @@ footer {
 #copyrights {
   grid-row: 3;
   width: 100%;
-}
-
-.christian_container img {
-  height: 80%;
-  width: 70%;
-  border-radius: 5%;
-}
-.christian_container {
-  text-align: center;
-}
-
-@media screen and (min-width: 950px) {
-  .about_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-  }
-  .about_left {
-    grid-column: 1;
-    margin: 5%;
-  }
-
-  #om_mig {
-    padding: 5%;
-  }
-
-  #cv {
-    padding: 5%;
-  }
-
-  .christian_container img {
-    height: 90%;
-    width: 70%;
-    border-radius: 5%;
-    margin: 5%;
-  }
-
-  .christian_container {
-    grid-column: 2;
-  }
-}
-
-.tema-beskrivelse {
-  padding: 20px;
-  margin: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.tema-beskrivelse h2 {
-  margin-bottom: 10px;
-}
-
-.tema-beskrivelse p {
-  flex: 1;
-}
-
-.tema-billede {
-  width: 550px;
-  height: auto;
-  margin-right: 20px;
-  border-radius: 5px;
 }
