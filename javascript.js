@@ -11,6 +11,30 @@ function onBurgerMenuClick() {
   }
 }
 
+const fiskContainer = document.getElementById("fisk_container");
+const startButton = document.getElementById("startAnimation");
+
+function setRandomStartPosition() {
+  const maxLeft = window.innerWidth - fiskContainer.offsetWidth;
+  const maxTop = window.innerHeight - fiskContainer.offsetHeight;
+
+  const randomLeft = Math.random() * maxLeft;
+  const randomTop = Math.random() * maxTop;
+
+  fiskContainer.style.left = `${randomLeft}4px`;
+  fiskContainer.style.top = `${randomTop}10px`;
+}
+
+startButton.addEventListener("click", () => {
+  setRandomStartPosition();
+  fiskContainer.style.animationPlayState = "running";
+  fiskContainer.classList.remove("hidden");
+});
+
+fiskContainer.addEventListener("click", () => {
+  fiskContainer.classList.add("hidden");
+  fiskContainer.style.animationPlayState = "paused";
+});
 var animationContainer = ducument.getElementById("lottieKaffe");
 
 var animation = lottie.loadAnimation({
