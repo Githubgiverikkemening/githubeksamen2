@@ -92,18 +92,99 @@ body {
   display: grid;
   grid-template-columns: 1fr;
 }
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  height: 50vh;
+  background: linear-gradient(rgba(212, 211, 211, 0.5), rgba(0, 0, 0, 0.5)),
+    url("hero_section..webp") center/cover no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero_content {
+  margin-top: 2%;
+  font-size: large;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    text-align: center;
+    padding: 0 40px;
+    height: 100vh;
+    background: linear-gradient(rgba(212, 211, 211, 0.5), rgba(0, 0, 0, 0.5)),
+      url("hero_section..webp") center/cover no-repeat;
+    color: #fff;
+    justify-content: center;
+  }
+
+  .hero_content {
+    max-width: 600px;
+    margin-top: 5%;
+    font-size: xx-large;
+  }
+
+  #lotties_forside {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(197, 218, 225);
+    border-radius: 0.5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1%;
+    margin: 1%;
+  }
+}
+
+.breadtekst {
+  padding: 10px 20px;
+  margin: 0 auto;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+#lotties_forside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(197, 218, 225);
+  border-radius: 10%;
+}
+
+#lottieKaffe_forside {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#lottieFish_forside {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 /* OM MIG HTML */
 /*------*/
 
 #om_mig {
   display: flex;
-
-  align-items: center; /* Center elements vertically */
-  flex-direction: column; /* Stack children vertically */
+  align-items: center;
+  flex-direction: column;
 }
 
 #lottieMusscroll {
-  margin-bottom: 20px; /* Add spacing below the animation */
+  margin-bottom: 20px;
   justify-content: center;
 }
 
@@ -143,15 +224,22 @@ body {
   #lottieMusscroll {
     display: none;
   }
+
   .about_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5px;
+    gap: 2%;
   }
   .about_alt_tekst {
     display: grid;
     grid-column: 1fr 1fr;
     grid-template-rows: 1fr ifr;
+    padding-top: 30%;
+  }
+
+  #om_mig {
+    padding-left: 40px;
+    padding-right: 50px;
   }
 
   #lottieKaffe {
@@ -160,7 +248,9 @@ body {
   }
 
   #cv {
-    padding-left: none;
+    width: 250px;
+    height: 300px;
+    padding-left: 50px;
   }
 
   .christian_container img {

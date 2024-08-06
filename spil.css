@@ -1,23 +1,193 @@
-#screen {
+/* 
+
+#falling-items-container {
+    width: 100%;
+    height: calc(100vh - 150px); 
+    position: relative;
+}
+
+.falling-item {
+    position: absolute;
+    width: 50px; 
+    height: 50px; 
+    background-size: cover; 
+    cursor: pointer;
+}
+
+
+.good-item {
+    background-size: cover; 
+}
+
+.bad-item {
+    background-size: cover; 
+}
+
+
+#ending-screen {
+    display: none; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
+    text-align: center; 
+}
+
+#ending-screen img {
+    max-width: 100%;
+}
+
+#ending-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+#final-score {
+    font-size: 75px; 
+    position: absolute;
+    top: 25%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: -1px -1px 0 black,  
+                 1px -1px 0 black,
+                 -1px 1px 0 black,
+                 1px 1px 0 black;
+}
+
+#restart-button {
+    position: absolute; 
+    top: 70%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 250px;
+    height: 80px;
+    background-color: rgba(23, 121, 23, 0.711);
+    font-size: 35px;
+    color: black;
+    border-radius: 10px; 
+    border: 2px solid black; 
+    background-color: transparent; 
+    color: white; 
+    padding: 10px 20px; 
+    font-size: 18px;
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+#restart-button:hover {
+    background-color: rgba(43, 147, 30, 0.802); 
+    color: white; 
+} */
+
+/* ALLE SKÆRMNE */
+#screen > div {
   width: 100%;
   aspect-ratio: 16/9;
   position: relative;
   container-type: inline-size;
   overflow: hidden;
+  display: none;
 }
 
-@container (min-widht:700px) {
-  #game_ui {
-    font-size: 2em;
-  }
-}
-
-#game {
+#start {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  background-image: url(forside_spil.svg);
+  background-size: cover;
+  object-fit: cover;
+  display: block;
+}
+
+#play_knap {
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  top: 75%;
+  left: 11.5%;
+  background-image: url(play_now.svg);
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+#play_knap:hover {
+  transform: scale(1.2);
+}
+
+#game_over {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(gameover.svg);
+  background-size: cover;
+  display: none;
+}
+
+#spil_igen1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 47%;
+  left: -5%;
+  background-image: url(try_again.svg);
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+#spil_igen1:hover {
+  transform: scale(1.2);
+}
+
+#level_complete {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url(winnersite.svg);
+  background-size: cover;
+  display: none;
+}
+
+#spil_igen2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 47%;
+  left: -5%;
+  background-image: url(try_again.svg);
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+#spil_igen2:hover {
+  transform: scale(1.2);
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 #game_background {
@@ -28,7 +198,7 @@
   left: 0;
   background-image: url(game_screen.svg);
   background-size: cover;
-  /* display: none; */
+  background-position: center;
 }
 
 #game_elements {
@@ -39,20 +209,45 @@
   left: 0;
 }
 
+/* #falling-items-container {
+  width: 100%;
+  height: calc(100vh - 150px); 
+  position: relative;
+}
+
+.falling-item {
+  position: absolute;
+  width: 50px; 
+  height: 50px; 
+  background-size: cover; 
+  cursor: pointer;
+}
+
+
+.good-item {
+  background-size: cover; 
+}
+
+.bad-item {
+  background-size: cover; 
+} */
+
 #fisk_container {
   position: absolute;
   width: 30%;
   height: 40%;
   aspect-ratio: 1/1;
   top: 80%;
-  left: 60%;
+  left: 40%;
   background-color: blue;
-  animation: moveFisk 5s linear infinite;
+  animation: moveFisk 7s linear infinite paused;
   cursor: pointer;
+  transition: visibility 0.3s, opacity 0.3s linear transform 0.3s;
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 @keyframes moveFisk {
@@ -188,97 +383,26 @@
 }
 
 #score_board {
-  width: 6%;
-
+  width: 10%;
   position: absolute;
-  top: 81%;
-  left: 36%;
+  top: 84%;
+  left: 34%;
+  font-size: 25px;
+  position: absolute;
 }
 
 .board_score {
   width: 200px;
   height: 50px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px; /* Tekststørrelse */
-  color: #333; /* Tekstfarve */
-  font-weight: bold; /* Fed tekst */
+  font-size: 40px;
+  color: #333;
+  font-weight: bolder;
   transition: all 0.3s ease;
 }
 
 #increase_score {
   background-color: #2c48e7;
-}
-
-#start {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url(forside_spil.svg);
-  background-size: cover;
-  display: none;
-}
-
-#play_knap {
-  width: 25%;
-  height: 25%;
-  position: absolute;
-  top: 75%;
-  left: 11.5%;
-  background-image: url(play_now.svg);
-  background-size: cover;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
-}
-
-#play_knap:hover {
-  transform: scale(1.1);
-  background-color: #2c48e7;
-}
-
-#game_over {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url(gameover.svg);
-  background-size: cover;
-  display: none;
-}
-
-#spil_igen1 {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 47%;
-  left: 0;
-  background-image: url(try_again.svg);
-  background-size: cover;
-}
-
-#level_complete {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url(winnersite.svg);
-  background-size: cover;
-  display: none;
-}
-
-#spil_igen2 {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 47%;
-  left: -5%;
-  background-image: url(try_again.svg);
-  background-size: cover;
 }

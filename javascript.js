@@ -11,29 +11,73 @@ function onBurgerMenuClick() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function skjulAlleSkærme() {
+  const skærme = document.querySelectorAll("#screen > div");
+  skærme.forEach((skærm) => {
+    skærm.style.display = "none";
+  });
+}
+
+// Funktion til at vise en specifik skærm ved dens ID
+function visSkærm(skærmId) {
+  skjulAlleSkærme();
+  const skærm = document.getElementById(skærmId);
+  if (skærm) {
+    skærm.style.display = "block";
+  }
+}
+
+// Tilføj event listeners til knapper for at skifte skærme
+document.getElementById("play_knap").addEventListener("click", () => {
+  visSkærm("game"); // Start spillet
+});
+
+document.getElementById("spil_igen1").addEventListener("click", () => {
+  visSkærm("start"); // Tilbage til start
+});
+
+document.getElementById("spil_igen2").addEventListener("click", () => {
+  visSkærm("start"); // Tilbage til start
+});
+
+// Start med at vise startskærmen
+visSkærm("start");
+
+// KNAP ELEMENTER
+const playknapDiv = document.getElementById("play_knap");
+
+play_knap.addEventListener("click", function () {
+  alert("Div clicked!");
+});
+
+const playigenDiv1 = document.getElementById("spil_igen1");
+
+spil_igen1.addEventListener("click", function () {
+  alert("Div clicked!");
+});
+
+const playigenDiv2 = document.getElementById("spil_igen2");
+
+spil_igen2.addEventListener("click", function () {
+  alert("Div clicked!");
+});
+
+// GAME ELEMENTER(FISK OG FLY)
+
+document.addEventListener("DOMContentLoaded", function () {
   const fiskContainer = document.getElementById("fisk_container");
 
-  // Funktion til at sætte fisk_container på en tilfældig startposition
-  function setRandomStartPosition() {
-    const maxLeft = window.innerWidth - fiskContainer.offsetWidth;
-
-    // Generer en tilfældig vandret position inden for synligt område
-    const randomLeft = Math.random() * maxLeft;
-
-    // Sæt den initiale top til 0 for at starte fra toppen
-    fiskContainer.style.left = `${randomLeft}px`;
-    fiskContainer.style.top = `0px`;
-  }
-
-  // Sæt fisk_container på en tilfældig position ved load
-  setRandomStartPosition();
-
-  // Tilføj en klik-event listener til fisk_container for at få den til at forsvinde
+  // Tilføj en klik-begivenhedslytter til fisk_container
   fiskContainer.addEventListener("click", () => {
-    fiskContainer.classList.add("hidden"); // Gør containeren usynlig
-    fiskContainer.style.animationPlayState = "paused"; // Pause animationen
-    alert("Fisk container klikket!"); // Feedback til brugeren
+    // Gør elementet usynligt
+    fiskContainer.classList.add("hidden");
+
+    // Flyt elementet til en ny position efter det er blevet usynligt
+    setTimeout(() => {
+      fiskContainer.style.top = Math.random() * 80 + "%"; // Ny tilfældig top-position
+      fiskContainer.style.left = Math.random() * 80 + "%"; // Ny tilfældig left-position
+      fiskContainer.classList.remove("hidden"); // Gør elementet synligt igen
+    }, 300); // 300ms forsinkelse for at matche transition-tiden
   });
 });
 
@@ -45,37 +89,4 @@ var animation = lottie.loadAnimation({
   loop: true,
   autoplay: true,
   path: "kaffe.json",
-});
-
-window.addEventListener("load", startGame);
-
-function startGame() {
-  console.log("startGame");
-
-  document.querySelector("#time_board_sand").classList.add("timeglastimer");
-
-  document
-    .querySelector("#time_board_sand")
-    .addEventListener("animationend", endGame);
-}
-
-function endGame() {
-  console.log("endGame");
-
-  document
-    .querySelector("#time_board_sand")
-    .removeEventListener("animationend", endGame);
-
-  console.log("Tiden er gået");
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  const fiskContainer = document.getElementById("fisk_container");
-  const energyBoard2 = document.getElementById("energy_board2");
-
-  // Event listener for fisk_container
-  fiskContainer.addEventListener("click", function () {
-    // Sæt energy_board2 til at være usynlig
-    energyBoard2.style.display = "none";
-  });
 });

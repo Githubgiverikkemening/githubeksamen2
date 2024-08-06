@@ -67,50 +67,61 @@
       <div class="center_mus">
         <div id="lottieMusscroll" style="width: 50px; height: 50px"></div>
       </div>
-      <h1>Forside</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque non
-        consectetur optio. Odit corrupti labore consequuntur veniam vitae, sint
-        accusantium. Reiciendis quaerat iusto nostrum iste incidunt ipsam
-        assumenda culpa et!
-      </p>
-
-      <div id="lottieKaffe" style="width: 300px; height: 300px"></div>
-      <script>
-        fetch("kaffetogo.json")
-          .then((response) => response.json())
-          .then((data) => {
-            lottie.loadAnimation({
-              container: document.getElementById("lottieKaffe"),
-              renderer: "svg",
-              loop: true,
-              autoplay: true,
-              animationData: data,
-            });
-          })
-          .catch((error) => {
-            console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
-          });
-      </script>
-
-      <div id="lottieFish" style="width: 400px; height: 400px"></div>
-      <script>
-        fetch("fish.json")
-          .then((response) => response.json())
-          .then((data) => {
-            lottie.loadAnimation({
-              container: document.getElementById("lottieFish"),
-              renderer: "svg",
-              loop: true,
-              autoplay: true,
-              animationData: data,
-            });
-          })
-          .catch((error) => {
-            console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
-          });
-      </script>
+      <section class="hero">
+        <div class="hero_content">
+          <h1>Velkommen</h1>
+        </div>
+      </section>
+      <div class="breadtekst">
+        <p>
+          Med denne eksamensopgave vil jeg vise min udvikling som
+          multimediedesigner, der trods koncentrationsbesvær, søvnproblemer og
+          en til tider stresset periode i livet. Vil jeg gerne overbevise jer
+          om, at jeg har opnået den faglighed der skal til for at bestå 1.
+          semester.<br />
+          Og hjernerystelsen gør, at jeg kan miste overblikket samt overskud, er
+          jeg gået med et skrapet og simpelt design af mine sider. Men jeg har
+          også altid været glad for det enkle, hvilket er den stil jeg har valgt
+          at gå med.
+        </p>
+      </div>
+      <div id="lotties_forside">
+        <div id="lottieKaffe_forside" style="width: 300px; height: 300px"></div>
+        <div id="lottieFish_forside" style="width: 300px; height: 300px"></div>
+      </div>
     </main>
+    <script>
+      fetch("kaffetogo.json")
+        .then((response) => response.json())
+        .then((data) => {
+          lottie.loadAnimation({
+            container: document.getElementById("lottieKaffe_forside"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: data,
+          });
+        })
+        .catch((error) => {
+          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
+        });
+    </script>
+    <script>
+      fetch("fish.json")
+        .then((response) => response.json())
+        .then((data) => {
+          lottie.loadAnimation({
+            container: document.getElementById("lottieFish_forside"),
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: data,
+          });
+        })
+        .catch((error) => {
+          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
+        });
+    </script>
     <script>
       fetch("lottiemus.json")
         .then((response) => response.json())
