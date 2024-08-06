@@ -46,39 +46,73 @@ visSkærm("start");
 // KNAP ELEMENTER
 const playknapDiv = document.getElementById("play_knap");
 
-play_knap.addEventListener("click", function () {
-  alert("Div clicked!");
-});
+// play_knap.addEventListener("click", function () {
+//   alert("Div clicked!");
+// });
 
-const playigenDiv1 = document.getElementById("spil_igen1");
+// const playigenDiv1 = document.getElementById("spil_igen1");
 
-spil_igen1.addEventListener("click", function () {
-  alert("Div clicked!");
-});
+// spil_igen1.addEventListener("click", function () {
+//   alert("Div clicked!");
+// });
 
-const playigenDiv2 = document.getElementById("spil_igen2");
+// const playigenDiv2 = document.getElementById("spil_igen2");
 
-spil_igen2.addEventListener("click", function () {
-  alert("Div clicked!");
-});
+// spil_igen2.addEventListener("click", function () {
+//   alert("Div clicked!");
+// });
 
 // GAME ELEMENTER(FISK OG FLY)
 
+// Vælg fisk_container elementet
+const fiskContainer = document.getElementById("fisk_container");
+
+// Tilføj en klik-event listener til fisk_container
+fiskContainer.addEventListener("click", () => {
+  // Tilføj 'hidden' klassen for at gøre elementet usynligt
+  fiskContainer.classList.add("hidden");
+});
+
+// UI ELEMENTER
 document.addEventListener("DOMContentLoaded", function () {
-  const fiskContainer = document.getElementById("fisk_container");
+  const timeBoardSand = document.getElementById("time_board_sand");
+  const totalTime = 10; // Total tid i sekunder
+  let timerInterval; // Global variabel til timer interval
+  let remainingTime = totalTime;
 
-  // Tilføj en klik-begivenhedslytter til fisk_container
-  fiskContainer.addEventListener("click", () => {
-    // Gør elementet usynligt
-    fiskContainer.classList.add("hidden");
+  function startTimer() {
+    const startTime = Date.now();
+    const endTime = startTime + totalTime * 1000;
 
-    // Flyt elementet til en ny position efter det er blevet usynligt
-    setTimeout(() => {
-      fiskContainer.style.top = Math.random() * 80 + "%"; // Ny tilfældig top-position
-      fiskContainer.style.left = Math.random() * 80 + "%"; // Ny tilfældig left-position
-      fiskContainer.classList.remove("hidden"); // Gør elementet synligt igen
-    }, 300); // 300ms forsinkelse for at matche transition-tiden
-  });
+    function updateTime() {
+      const now = Date.now();
+      remainingTime = Math.max(0, Math.floor((endTime - now) / 1000));
+      const progress = (1 - remainingTime / totalTime) * 100;
+
+      // Adjust the clip-path based on the remaining time
+      timeBoardSand.style.clipPath = `inset(${progress}% 0 0 0)`;
+
+      if (remainingTime <= 0) {
+        clearInterval(timerInterval);
+        visSkærm("game_over"); // Vis game over skærmen
+      }
+    }
+
+    // Clear any existing intervals
+    if (timerInterval) {
+      clearInterval(timerInterval);
+    }
+
+    // Reset clip-path for a fresh start
+    timeBoardSand.style.clipPath = `inset(0% 0 0 0)`;
+
+    // Start the timer
+    timerInterval = setInterval(updateTime, 1000);
+    updateTime(); // Initial call to set the correct state immediately
+  }
+
+  // Start the timer when the page loads
+  startTimer();
 });
 
 var animationContainer = ducument.getElementById("lottieKaffe");
