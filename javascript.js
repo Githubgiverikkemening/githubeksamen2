@@ -76,7 +76,7 @@ fiskContainer.addEventListener("click", () => {
 // UI ELEMENTER
 document.addEventListener("DOMContentLoaded", function () {
   const timeBoardSand = document.getElementById("time_board_sand");
-  const totalTime = 10; // Total tid i sekunder
+  const totalTime = 30; // Total tid i sekunder
   let timerInterval; // Global variabel til timer interval
   let remainingTime = totalTime;
 
