@@ -117,15 +117,32 @@
   left: 0;
 }
 
-#fisk_container {
+#fisk_container1 {
+  top: 80%;
+  left: -20%;
+  animation: moveFisk 9s ease-in-out infinite;
+}
+
+#fisk_container2 {
+  top: -30%;
+  left: -8%;
+  animation: moveFisk 7s linear infinite;
+}
+#fisk_container3 {
+  top: 70%;
+  left: -15%;
+  animation: moveFisk 7s linear infinite;
+}
+#fisk_container4 {
+  top: 5%;
+  left: -15%;
+  animation: moveFisk 7s ease infinite;
+}
+.fisk_container {
   position: absolute;
   width: 30%;
   height: 40%;
   aspect-ratio: 1/1;
-  top: 80%;
-  left: 40%;
-
-  animation: moveFisk 7s linear infinite;
   cursor: pointer;
   transition: visibility 0.3s, opacity 0.3s linear transform 0.3s;
   z-index: 10;
@@ -145,26 +162,65 @@
   }
 }
 
-#fisk_sprite {
+#fisk_sprite1 {
   width: 100%;
   height: 100%;
   background-image: url(kawaii_fish.svg);
   background-size: cover;
 }
 
-#fly_container {
-  aspect-ratio: 1/1;
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  z-index: 10;
+#fisk_sprite2 {
+  width: 100%;
+  height: 100%;
+  background-image: url(kawaii_fish.svg);
+  background-size: cover;
 }
 
-#fly_container {
+#fisk_sprite3 {
+  width: 100%;
+  height: 100%;
+  background-image: url(kawaii_fish.svg);
+  background-size: cover;
+}
+#fisk_sprite4 {
+  width: 100%;
+  height: 100%;
+  background-image: url(kawaii_fish.svg);
+  background-size: cover;
+}
+
+#fly_container1 {
+  top: 20%;
+  left: 25%;
+  animation: moveFly 10s linear infinite;
+}
+
+#fly_container2 {
+  top: 60%;
+  left: 55%;
+  animation: moveFly 10s linear infinite;
+}
+
+#fly_container3 {
+  top: -30%;
+  left: 5%;
+  animation: moveFly 10s linear infinite;
+}
+
+#fly_container4 {
+  top: 80%;
+  left: -20%;
+  animation: moveFly 10s linear infinite;
+}
+
+.fly_container {
   width: 40%;
   height: 40%;
   cursor: pointer;
-  animation: moveFly 10s linear infinite;
+  position: absolute;
+  aspect-ratio: 1/1;
+  transition: visibility 0.3s, opacity 0.3s linear transform 0.3s;
+  z-index: 10;
 }
 
 .hidden {
@@ -180,13 +236,30 @@
   }
 }
 
-#fly_sprite {
+#fly_sprite1 {
   width: 100%;
   height: 100%;
   background-image: url(fly_kawaii.svg);
   background-size: cover;
 }
-
+#fly_sprite2 {
+  width: 100%;
+  height: 100%;
+  background-image: url(fly_kawaii.svg);
+  background-size: cover;
+}
+#fly_sprite3 {
+  width: 100%;
+  height: 100%;
+  background-image: url(fly_kawaii.svg);
+  background-size: cover;
+}
+#fly_sprite4 {
+  width: 100%;
+  height: 100%;
+  background-image: url(fly_kawaii.svg);
+  background-size: cover;
+}
 #game_ui {
   width: 100%;
   height: 100%;

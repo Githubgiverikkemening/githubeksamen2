@@ -47,7 +47,7 @@ const playknapDiv = document.getElementById("play_knap");
 // GAME ELEMENTER(FISK OG FLY)
 
 // Vælg fisk_container elementet
-const fiskContainer = document.getElementById("fisk_container");
+const fiskContainer = document.getElementById("fisk_container1");
 
 // Tilføj en klik-event listener til fisk_container
 fiskContainer.addEventListener("click", () => {
@@ -59,7 +59,17 @@ fiskContainer.addEventListener("click", () => {
   scoreBoard.textContent = "Score: " + score;
 });
 
-const flyContainer = document.getElementById("fly_container");
+const fiskContainers = document.querySelectorAll(".fisk_container");
+
+fiskContainers.forEach((container) => {
+  container.addEventListener("click", () => {
+    container.classList.add("hidden");
+    score += 1;
+    scoreBoard.textContent = "Score: " + score;
+  });
+});
+
+const flyContainer = document.getElementById("fly_container1");
 
 flyContainer.addEventListener("click", () => {
   flyContainer.classList.add("hidden");
@@ -106,7 +116,7 @@ function start_time() {
     timerInterval = setInterval(updateTime, 1000);
     updateTime(); // Initial call to set the correct state immediately
   }
-  startTimer();
+  //startTimer();
 }
 
 var animationContainer = document.getElementById("lottieKaffe");
