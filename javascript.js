@@ -36,6 +36,7 @@ document.getElementById("spil_igen1").addEventListener("click", () => {
 
 document.getElementById("spil_igen2").addEventListener("click", () => {
   visSkærm("start"); // Tilbage til start
+  location.reload();
 });
 
 // Start med at vise startskærmen
@@ -94,6 +95,9 @@ function hideNextEnergyBoard() {
   if (currentEnergyBoardIndex < energyBoards.length) {
     energyBoards[currentEnergyBoardIndex].classList.add("hidden");
     currentEnergyBoardIndex++;
+  }
+  if (currentEnergyBoardIndex === energyBoards.length) {
+    visSkærm("game_over"); // Vis game over skærmen
   }
 }
 // Tilføj en klik-event listener til hver fly_container
