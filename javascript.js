@@ -76,6 +76,37 @@ flyContainer.addEventListener("click", () => {
   document.getElementById("energy_board3").classList.add("hidden");
 });
 
+// Tæller for hvilket energy board der skal skjules
+let currentEnergyBoardIndex = 0;
+
+const flyContainers = document.querySelectorAll(".fly_container");
+
+// Funktion til at skjule det næste energy board
+function hideNextEnergyBoard() {
+  // Skab en liste over energy boards
+  const energyBoards = [
+    document.getElementById("energy_board1"),
+    document.getElementById("energy_board2"),
+    document.getElementById("energy_board3"),
+  ];
+
+  // Skjul det energy board, der svarer til currentEnergyBoardIndex
+  if (currentEnergyBoardIndex < energyBoards.length) {
+    energyBoards[currentEnergyBoardIndex].classList.add("hidden");
+    currentEnergyBoardIndex++;
+  }
+}
+// Tilføj en klik-event listener til hver fly_container
+flyContainers.forEach((container) => {
+  container.addEventListener("click", () => {
+    // Skjul fly_container
+    container.classList.add("hidden");
+
+    // Skjul det næste energy board
+    hideNextEnergyBoard();
+  });
+});
+
 // UI ELEMENTER
 const scoreBoard = document.getElementById("score_board");
 let score = 0;
