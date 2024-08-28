@@ -128,6 +128,7 @@
   animation: moveFisk 7s linear infinite;
   cursor: pointer;
   transition: visibility 0.3s, opacity 0.3s linear transform 0.3s;
+  z-index: 10;
 }
 
 .hidden {
@@ -156,12 +157,13 @@
   position: absolute;
   top: 20%;
   left: 25%;
+  z-index: 10;
 }
 
 #fly_container {
   width: 40%;
   height: 40%;
-
+  cursor: pointer;
   animation: moveFly 10s linear infinite;
 }
 
@@ -221,7 +223,7 @@
 
 .timeglastimer {
   animation-name: timeglastimer_kf;
-  animation-duration: 30s;
+  animation-duration: 15s;
 
   animation-timing-function: linear;
   animation-fill-mode: forwards;
