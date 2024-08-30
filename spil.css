@@ -347,17 +347,17 @@
   position: absolute;
   top: 84%;
   left: 34%;
-  font-size: 25px;
+  font-size: 2vw;
   position: absolute;
 }
 
 .board_score {
-  width: 200px;
-  height: 50px;
+  width: 100px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 2em;
   color: #333;
   font-weight: bolder;
   transition: all 0.3s ease;
