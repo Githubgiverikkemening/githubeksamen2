@@ -47,19 +47,7 @@ const playknapDiv = document.getElementById("play_knap");
 
 // GAME ELEMENTER(FISK OG FLY)
 
-// Vælg fisk_container elementet
-const fiskContainer = document.getElementById("fisk_container1");
-
-// Tilføj en klik-event listener til fisk_container
-fiskContainer.addEventListener("click", () => {
-  // Tilføj 'hidden' klassen for at gøre elementet usynligt
-  fiskContainer.classList.add("hidden");
-  score += 1;
-
-  // Opdater score_board med den nye score
-  scoreBoard.textContent = "Score: " + score;
-});
-
+const maxScore = 15;
 const fiskContainers = document.querySelectorAll(".fisk_container");
 
 fiskContainers.forEach((container) => {
@@ -67,20 +55,65 @@ fiskContainers.forEach((container) => {
     container.classList.add("hidden");
     score += 1;
     scoreBoard.textContent = "Score: " + score;
+
+    // Tjek om spilleren har nået den maksimale score
+    if (score >= maxScore) {
+      visSkærm("level_complete"); // Vis skærmen for level complete
+      return; // Stop yderligere handlinger
+    }
+
+    // Efter et kort stykke tid (f.eks. 1 sekund) vises fisken igen på en ny position
+    setTimeout(() => {
+      const newPosition = getRandomPosition();
+      container.style.left = `${newPosition.x}px`;
+      container.style.top = `${newPosition.y}px`;
+
+      // Vis fisken igen
+      container.classList.remove("hidden");
+    }, 1000); // 1 sekunds forsinkelse
   });
 });
 
-const flyContainer = document.getElementById("fly_container1");
+function resetFish() {
+  const fishContainers = document.querySelectorAll(".fisk_container");
+  fishContainers.forEach((container) => {
+    container.classList.remove("hidden");
+    // Sæt ny tilfældig position
+    container.style.top = `${Math.random() * 80}%`;
+    container.style.left = `${Math.random() * 80}%`;
+  });
+}
 
-flyContainer.addEventListener("click", () => {
-  flyContainer.classList.add("hidden");
-  document.getElementById("energy_board3").classList.add("hidden");
-});
+function incrementScore() {
+  score++;
+  if (score >= maxScore) {
+    document.getElementById("level_complete").style.display = "block";
+  }
+}
 
-// Tæller for hvilket energy board der skal skjules
-let currentEnergyBoardIndex = 0;
+function fishClickHandler(event) {
+  event.currentTarget.classList.add("hidden");
+  incrementScore();
+  if (score < maxScore) {
+    resetFish();
+  }
+}
+
+function getRandomPosition() {
+  const screen = document.getElementById("game_elements");
+  const screenWidth = screen.clientWidth;
+  const screenHeight = screen.clientHeight;
+
+  // Generer tilfældige positioner inden for skærmens dimensioner
+  const randomX = Math.random() * (screenWidth - 100); // Juster for fiskens bredde
+  const randomY = Math.random() * (screenHeight - 100); // Juster for fiskens højde
+
+  return { x: randomX, y: randomY };
+}
 
 const flyContainers = document.querySelectorAll(".fly_container");
+// Tæller for hvilket energy board der skal skjules
+let currentEnergyBoardIndex = 0;
 
 // Funktion til at skjule det næste energy board
 function hideNextEnergyBoard() {
@@ -108,6 +141,16 @@ flyContainers.forEach((container) => {
 
     // Skjul det næste energy board
     hideNextEnergyBoard();
+
+    // Efter et kort stykke tid (f.eks. 1 sekund) vises fisken igen på en ny position
+    setTimeout(() => {
+      const newPosition = getRandomPosition();
+      container.style.left = `${newPosition.x}px`;
+      container.style.top = `${newPosition.y}px`;
+
+      // Vis fisken igen
+      container.classList.remove("hidden");
+    }, 1000); // 1 sekunds forsinkelse
   });
 });
 
@@ -117,7 +160,7 @@ let score = 0;
 
 function start_time() {
   const timeBoardSand = document.getElementById("time_board_sand");
-  const totalTime = 15; // Total tid i sekunder
+  const totalTime = 60; // Total tid i sekunder
   let timerInterval; // Global variabel til timer interval
   let remainingTime = totalTime;
 
@@ -151,7 +194,7 @@ function start_time() {
     timerInterval = setInterval(updateTime, 1000);
     updateTime(); // Initial call to set the correct state immediately
   }
-  //startTimer();
+  startTimer();
 }
 
 var animationContainer = document.getElementById("lottieKaffe");
