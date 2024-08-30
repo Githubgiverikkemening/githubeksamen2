@@ -140,8 +140,8 @@
 }
 .fisk_container {
   position: absolute;
-  width: 40%;
-  height: 40%;
+  width: 20%;
+  height: 35%;
   aspect-ratio: 1/1;
   cursor: pointer;
   transition: visibility 0.3s, opacity 0.3s linear transform 0.3s;
@@ -214,8 +214,8 @@
 }
 
 .fly_container {
-  width: 40%;
-  height: 40%;
+  width: 15%;
+  height: 25%;
   cursor: pointer;
   position: absolute;
   aspect-ratio: 1/1;
