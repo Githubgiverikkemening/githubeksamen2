@@ -206,3 +206,29 @@ var animation = lottie.loadAnimation({
   autoplay: true,
   path: "kaffe.json",
 });
+
+function navigateTo(url) {
+  window.location.href = url;
+}
+
+document.getElementById("tema2").addEventListener("click", function () {
+  navigateTo(
+    "http://christianfranckramirez.com/mmd/portfolio/tema2/website/min_computer.html"
+  );
+});
+
+document.getElementById("tema3").addEventListener("click", function () {
+  navigateTo(
+    "http://christianfranckramirez.com/mmd/portfolio/tema3/livesharing/index.html"
+  );
+});
+
+document.getElementById("tema4").addEventListener("click", function () {
+  navigateTo("http://127.0.0.1:5500/spil_animation.html");
+});
+
+document.getElementById("tema5").addEventListener("click", function () {
+  navigateTo(
+    "http://christianfranckramirez.com/mmd/portfolio/tema5/passionsite/index.html"
+  );
+});

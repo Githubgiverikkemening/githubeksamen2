@@ -136,8 +136,8 @@ body {
   #lotties_forside {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: rgb(197, 218, 225);
-    border-radius: 0.5%;
+    background-color: rgb(94, 155, 175);
+    border-radius: 10%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -146,18 +146,17 @@ body {
   }
 }
 
+#lotties_forside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(197, 218, 225);
+  border-radius: 30%;
+}
 .breadtekst {
   padding: 10px 20px;
   margin: 0 auto;
   max-width: 600px;
   line-height: 1.6;
-}
-
-#lotties_forside {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: rgb(197, 218, 225);
-  border-radius: 10%;
 }
 
 #lottieKaffe_forside {
@@ -184,7 +183,7 @@ body {
 }
 
 #lottieMusscroll {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   justify-content: center;
 }
 
@@ -200,9 +199,9 @@ body {
   justify-content: center;
 }
 
-#cv_kaffe {
+#cv {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   padding-bottom: 10%;
   padding-left: 2%;
 }
@@ -290,27 +289,63 @@ body {
   padding-top: 4%;
 }
 
-.tema-beskrivelse {
+.tema_beskrivelse {
   padding: 20px;
   margin: 20px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 5px;
+  cursor: pointer;
 }
 
-.tema-beskrivelse h2 {
+.tema_beskrivelse:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.01);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tema_beskrivelse h2 {
   margin-bottom: 10px;
 }
 
-.tema-beskrivelse p {
+.tema_beskrivelse p {
   flex: 1;
 }
 
-.tema-billede {
+.tema_billede {
   width: 550px;
   height: auto;
   margin-right: 20px;
   border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  .tema_beskrivelse {
+    padding: 20px;
+    margin: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .tema_beskrivelse h2 {
+    margin-bottom: 10px;
+  }
+
+  .tematext {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .tema_billede {
+    width: 550px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
 }
 
 /* FOOTER */
