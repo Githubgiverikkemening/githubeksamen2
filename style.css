@@ -108,9 +108,18 @@ body {
   padding: 0 20px;
 }
 
-.hero_content {
+.hero_text {
+  display: grid;
   margin-top: 2%;
   font-size: large;
+}
+
+.hero_mus {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
 }
 
 @media (min-width: 768px) {
@@ -127,7 +136,7 @@ body {
     justify-content: center;
   }
 
-  .hero_content {
+  .hero_text {
     max-width: 600px;
     margin-top: 5%;
     font-size: xx-large;
@@ -136,8 +145,8 @@ body {
   #lotties_forside {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: rgb(94, 155, 175);
-    border-radius: 10%;
+    background-color: rgb(f4f4f4);
+
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -146,17 +155,44 @@ body {
   }
 }
 
-#lotties_forside {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: rgb(197, 218, 225);
-  border-radius: 30%;
-}
 .breadtekst {
   padding: 10px 20px;
   margin: 0 auto;
   max-width: 600px;
   line-height: 1.6;
+}
+
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between buttons */
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: rgb(102, 176, 237);
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #8c52e5); /* Darker gradient on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.cta-button:active {
+  transform: translateY(1px); /* Pressed effect */
+}
+
+#lotties_forside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(f4f4f4);
 }
 
 #lottieKaffe_forside {
@@ -206,6 +242,9 @@ body {
   padding-left: 2%;
 }
 
+h2 {
+  padding-left: 5.5%;
+}
 #cv li {
   list-style-type: none;
 }
@@ -220,10 +259,6 @@ body {
 }
 
 @media screen and (min-width: 950px) {
-  #lottieMusscroll {
-    display: none;
-  }
-
   .about_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -304,10 +339,6 @@ body {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.tema_beskrivelse h2 {
-  margin-bottom: 10px;
-}
-
 .tema_beskrivelse p {
   flex: 1;
 }
@@ -321,29 +352,16 @@ body {
 
 @media (min-width: 768px) {
   .tema_beskrivelse {
-    padding: 20px;
-    margin: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
     cursor: pointer;
   }
 
-  .tema_beskrivelse h2 {
-    margin-bottom: 10px;
-  }
-
-  .tematext {
-    margin-left: 20%;
-    margin-right: 20%;
-  }
-
   .tema_billede {
     width: 550px;
     height: auto;
-    margin-right: 20px;
+
     border-radius: 5px;
   }
 }

@@ -9,67 +9,71 @@
   </head>
 
   <body>
-    <nav id="navbar" class="navbar">
-      <ul>
-        <li>
-          <a href="index.html" class="home">Home</a>
-        </li>
+    <header>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li>
+            <a href="index.html" class="home">Home</a>
+          </li>
 
-        <li class="nav_div">
-          <a href="projektportfolio.html">Projektportfolio</a>
-        </li>
-        <li class="nav_div">
-          <a href="om_mig.html">Om mig</a>
-        </li>
-      </ul>
+          <li class="nav_div">
+            <a href="projektportfolio.html">Projektportfolio</a>
+          </li>
+          <li class="nav_div">
+            <a href="om_mig.html">Om mig</a>
+          </li>
+        </ul>
 
-      <button id="burger_java" class="burger">
-        <span class="icon_open">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-menu-2"
-            width="44"
-            height="44"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="#2c3e50"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M4 6l16 0" />
-            <path d="M4 12l16 0" />
-            <path d="M4 18l16 0" />
-          </svg>
-        </span>
-        <span class="icon_close">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-x"
-            width="44"
-            height="44"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="#2c3e50"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M18 6l-12 12" />
-            <path d="M6 6l12 12" />
-          </svg>
-        </span>
-      </button>
-    </nav>
+        <button id="burger_java" class="burger">
+          <span class="icon_open">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-menu-2"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#2c3e50"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 6l16 0" />
+              <path d="M4 12l16 0" />
+              <path d="M4 18l16 0" />
+            </svg>
+          </span>
+          <span class="icon_close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-x"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#2c3e50"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
+            </svg>
+          </span>
+        </button>
+      </nav>
+    </header>
     <main class="forside">
-      <div class="center_mus">
-        <div id="lottieMusscroll" style="width: 50px; height: 50px"></div>
-      </div>
       <section class="hero">
         <div class="hero_content">
-          <h1>Velkommen</h1>
+          <div class="hero_text">
+            <h1>Velkommen</h1>
+          </div>
+          <div class="hero_mus">
+            <div id="lottieMusscroll" style="width: 50px; height: 50px"></div>
+          </div>
         </div>
       </section>
       <div class="breadtekst">
@@ -85,11 +89,51 @@
           at gå med.
         </p>
       </div>
+      <div class="cta-container">
+        <a href="#" class="cta-button">Button 1</a>
+        <a href="#" class="cta-button">Button 2</a>
+        <a href="#" class="cta-button">Button 3</a>
+        <a href="#" class="cta-button">Button 4</a>
+        <a href="#" class="cta-button">Button 5</a>
+      </div>
       <div id="lotties_forside">
         <div id="lottieKaffe_forside" style="width: 300px; height: 300px"></div>
         <div id="lottieFish_forside" style="width: 300px; height: 300px"></div>
       </div>
     </main>
+    <footer>
+      <div class="footer_container">
+        <section id="social_overskrift"><h3>Socials</h3></section>
+
+        <section id="social_links">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/christian.franckkristensen"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com/franco__ramirez/">Instagram</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@christianfranckramirez"
+                >TikTok</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section id="copyrights">
+          <p>
+            &copy; 2024 Christian Franck Ramirez Kristensen. Alle rettigheder
+            forbeholdes.
+          </p>
+        </section>
+      </div>
+    </footer>
     <script>
       fetch("kaffetogo.json")
         .then((response) => response.json())
@@ -138,39 +182,6 @@
           console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
         });
     </script>
-    <footer>
-      <div class="footer_container">
-        <section id="social_overskrift"><h3>Socials</h3></section>
-
-        <section id="social_links">
-          <ul>
-            <li>
-              <a href="https://www.facebook.com/christian.franckkristensen"
-                >Facebook</a
-              >
-            </li>
-            <li>
-              <a href="https://www.instagram.com/franco__ramirez/">Instagram</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/feed/">LinkedIn</a>
-            </li>
-            <li>
-              <a href="https://www.tiktok.com/@christianfranckramirez"
-                >TikTok</a
-              >
-            </li>
-          </ul>
-        </section>
-
-        <section id="copyrights">
-          <p>
-            &copy; 2024 Christian Franck Ramirez Kristensen. Alle rettigheder
-            forbeholdes.
-          </p>
-        </section>
-      </div>
-    </footer>
 
     <script src="javascript.js"></script>
   </body>
