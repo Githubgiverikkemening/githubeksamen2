@@ -1,3 +1,11 @@
+.tema_beskrivelse {
+  padding: 30px;
+  margin: 30px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
 #screen {
   width: 100%;
   aspect-ratio: 16/9;
