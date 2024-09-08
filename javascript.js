@@ -23,7 +23,7 @@ function visSkærm(skærmId) {
   }
 }
 
-// Tilføj event listeners til knapper for at skifte skærme
+// Event listeners til knapper for at skifte skærme
 document.getElementById("play_knap").addEventListener("click", () => {
   visSkærm("game"); // Start spillet
   start_time();
@@ -39,13 +39,13 @@ document.getElementById("spil_igen2").addEventListener("click", () => {
   location.reload();
 });
 
-// Start med at vise startskærmen
+// Vis startskærmen
 visSkærm("start");
 
-// KNAP ELEMENTER
+// KNAPELEMENTER
 const playknapDiv = document.getElementById("play_knap");
 
-// GAME ELEMENTER(FISK OG FLY)
+// GAMEELEMENTER(FISK OG FLY)
 
 const maxScore = 15;
 const fiskContainers = document.querySelectorAll(".fisk_container");
@@ -56,19 +56,19 @@ fiskContainers.forEach((container) => {
     score += 1;
     scoreBoard.textContent = "Score: " + score;
 
-    // Tjek om spilleren har nået den maksimale score
+    // Når spilleren har ramt den maksimale score
     if (score >= maxScore) {
-      visSkærm("level_complete"); // Vis skærmen for level complete
+      visSkærm("level_complete");
       return; // Stop yderligere handlinger
     }
 
-    // Efter et kort stykke tid (f.eks. 1 sekund) vises fisken igen på en ny position
+    // Fisken vises igen på en ny position efter et kort stykke tid (1 sekund)
     setTimeout(() => {
       const newPosition = getRandomPosition();
       container.style.left = `${newPosition.x}px`;
       container.style.top = `${newPosition.y}px`;
 
-      // Vis fisken igen
+      // Fisken vises igen
       container.classList.remove("hidden");
     }, 1000); // 1 sekunds forsinkelse
   });
@@ -78,7 +78,7 @@ function resetFish() {
   const fishContainers = document.querySelectorAll(".fisk_container");
   fishContainers.forEach((container) => {
     container.classList.remove("hidden");
-    // Sæt ny tilfældig position
+    // Ny tilfældig position
     container.style.top = `${Math.random() * 80}%`;
     container.style.left = `${Math.random() * 80}%`;
   });
@@ -104,7 +104,7 @@ function getRandomPosition() {
   const screenWidth = screen.clientWidth;
   const screenHeight = screen.clientHeight;
 
-  // Generer tilfældige positioner inden for skærmens dimensioner
+  // Tilfældige positioner inden for skærmens dimensioner
   const randomX = Math.random() * (screenWidth - 100); // Juster for fiskens bredde
   const randomY = Math.random() * (screenHeight - 100); // Juster for fiskens højde
 
@@ -117,29 +117,29 @@ let currentEnergyBoardIndex = 0;
 
 // Funktion til at skjule det næste energy board
 function hideNextEnergyBoard() {
-  // Skab en liste over energy boards
+  // Liste over energy boards
   const energyBoards = [
     document.getElementById("energy_board1"),
     document.getElementById("energy_board2"),
     document.getElementById("energy_board3"),
   ];
 
-  // Skjul det energy board, der svarer til currentEnergyBoardIndex
+  // Skjuler det energy board, der svarer til currentEnergyBoardIndex
   if (currentEnergyBoardIndex < energyBoards.length) {
     energyBoards[currentEnergyBoardIndex].classList.add("hidden");
     currentEnergyBoardIndex++;
   }
   if (currentEnergyBoardIndex === energyBoards.length) {
-    visSkærm("game_over"); // Vis game over skærmen
+    visSkærm("game_over");
   }
 }
-// Tilføj en klik-event listener til hver fly_container
+// Klik-event listener til hver fly_container
 flyContainers.forEach((container) => {
   container.addEventListener("click", () => {
     // Skjul fly_container
     container.classList.add("hidden");
 
-    // Skjul det næste energy board
+    // Skjuler næste energy board
     hideNextEnergyBoard();
 
     // Efter et kort stykke tid (f.eks. 1 sekund) vises fisken igen på en ny position

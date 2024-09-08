@@ -1,5 +1,10 @@
 body {
   font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+  color: #333;
+  background: #f4f4f4;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .tema_beskrivelse {
@@ -115,7 +120,7 @@ main {
   display: none;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1024px) {
   .navbar.open ul {
     display: block;
   }
@@ -146,10 +151,13 @@ main {
 }
 
 footer {
-  padding: 10px;
   font-size: small;
-  width: 100%;
-  height: 100%;
+
+  background-color: #333333;
+  color: #ffffff;
+  padding: 10px 20px;
+  width: auto;
+  position: relative;
 }
 
 .footer_container {
@@ -157,10 +165,12 @@ footer {
   grid-template-rows: 1fr 1fr 1fr;
   row-gap: 1px;
   position: relative;
-  background-color: #333333;
-  color: #ffffff;
   text-align: center;
   padding: 0;
+  width: 100%;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 10px;
   width: 100%;
 }
 
@@ -185,7 +195,7 @@ footer {
 
 #social_links li {
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 10px;
   color: #ffffff;
   text-decoration: none;
 }

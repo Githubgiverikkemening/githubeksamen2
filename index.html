@@ -28,9 +28,7 @@
           <li class="nav_div">
             <a href="grundlaeg_indhold.html">Grundlæggende indhold</a>
           </li>
-          <li class="nav_div">
-            <a href="projektportfolio.html">Projektportfolio</a>
-          </li>
+
           <li class="nav_div">
             <a href="om_mig.html">Om mig</a>
           </li>
@@ -83,35 +81,32 @@
           <div class="hero_text">
             <h1>Velkommen</h1>
           </div>
-          <div class="hero_mus">
-            <div id="lottieMusscroll" style="width: 50px; height: 50px"></div>
-          </div>
         </div>
       </section>
-      <div class="breadtekst">
-        <p>
-          Med denne eksamensopgave vil jeg vise min udvikling som
-          multimediedesigner, der trods koncentrationsbesvær, søvnproblemer og
-          en til tider stresset periode i livet. Vil jeg gerne overbevise jer
-          om, at jeg har opnået den faglighed der skal til for at bestå 1.
-          semester.<br />
-          Og hjernerystelsen gør, at jeg kan miste overblikket samt overskud, er
-          jeg gået med et skrapet og simpelt design af mine sider. Men jeg har
-          også altid været glad for det enkle, hvilket er den stil jeg har valgt
-          at gå med.
-        </p>
-      </div>
-      <div class="cta-container">
-        <a href="#" class="cta-button">Button 1</a>
-        <a href="#" class="cta-button">Button 2</a>
-        <a href="#" class="cta-button">Button 3</a>
-        <a href="#" class="cta-button">Button 4</a>
-        <a href="#" class="cta-button">Button 5</a>
-      </div>
-      <div id="lotties_forside">
-        <div id="lottieKaffe_forside" style="width: 300px; height: 300px"></div>
-        <div id="lottieFish_forside" style="width: 300px; height: 300px"></div>
-      </div>
+      <section class="tema_beskrivelse">
+        <div class="breadtekst">
+          <p>
+            Med denne eksamensopgave vil jeg vise min udvikling som
+            multimediedesigner, der trods koncentrationsbesvær, søvnproblemer og
+            en til tider stresset periode i livet. Vil jeg gerne overbevise jer
+            om, at jeg har opnået den faglighed der skal til for at bestå 1.
+            semester.<br />
+            Og hjernerystelsen gør, at jeg kan miste overblikket samt overskud,
+            er jeg gået med et skrapet og simpelt design af mine sider. Men jeg
+            har også altid været glad for det enkle, hvilket er den stil jeg har
+            valgt at gå med.
+          </p>
+          <p>
+            Jeg har gennem dette semester tilegnet mig viden om front end
+            design, der gør mig i stand til at kode hjemmesider med html, css og
+            javascript. Derudover har jeg arbejdet meget med kreative processer
+            og idéudvikling til udvikling af ønskede sites. Det har været et
+            semester med en enorm stejl læringskurve, men mange koder,
+            funktioner og sammenhængen af dem jeg har haft udfordringer med at
+            lære.
+          </p>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="footer_container">
@@ -146,38 +141,7 @@
         </section>
       </div>
     </footer>
-    <script>
-      fetch("kaffetogo.json")
-        .then((response) => response.json())
-        .then((data) => {
-          lottie.loadAnimation({
-            container: document.getElementById("lottieKaffe_forside"),
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            animationData: data,
-          });
-        })
-        .catch((error) => {
-          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
-        });
-    </script>
-    <script>
-      fetch("fish.json")
-        .then((response) => response.json())
-        .then((data) => {
-          lottie.loadAnimation({
-            container: document.getElementById("lottieFish_forside"),
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            animationData: data,
-          });
-        })
-        .catch((error) => {
-          console.error("Fejl ved indlæsning af Lottie JSON-fil:", error);
-        });
-    </script>
+
     <script>
       fetch("lottiemus.json")
         .then((response) => response.json())
