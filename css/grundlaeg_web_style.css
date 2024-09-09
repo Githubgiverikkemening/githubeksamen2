@@ -7,68 +7,6 @@ body {
   padding: 0;
 }
 
-.hero {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: center;
-  height: 50vh;
-  background: linear-gradient(rgba(212, 211, 211, 0.5), rgba(0, 0, 0, 0.5)),
-    url("hero_section..webp") center/cover no-repeat;
-  background-size: cover;
-  color: #fff;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.hero_text {
-  display: grid;
-  margin-top: 2%;
-  font-size: large;
-}
-
-.hero_mus {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-top: auto;
-}
-
-@media (min-width: 768px) {
-  .hero {
-    position: relative;
-    display: flex;
-    align-items: baseline;
-    text-align: center;
-    padding: 0 40px;
-    height: 100vh;
-    background: linear-gradient(rgba(212, 211, 211, 0.5), rgba(0, 0, 0, 0.5)),
-      url("hero_section..webp") center/cover no-repeat;
-    color: #fff;
-    justify-content: center;
-  }
-
-  .hero_text {
-    max-width: 600px;
-    margin-top: 5%;
-    font-size: xx-large;
-  }
-
-  #lotties_forside {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: rgb(f4f4f4);
-
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 1%;
-    margin: 1%;
-  }
-}
-
 .tema_beskrivelse {
   padding: 30px;
   margin: 30px;
@@ -85,7 +23,7 @@ h1 {
 }
 
 h2 {
-  color: rgb(73, 120, 171);
+  color: #333;
   font-size: large;
 
   margin-top: 30px;
@@ -222,6 +160,10 @@ footer {
   position: relative;
 }
 
+.p_footer {
+  color: #ffffff;
+}
+
 .footer_container {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -277,4 +219,30 @@ footer {
 #copyrights {
   grid-row: 3;
   width: 100%;
+}
+
+.a_final_Site {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  background-color: #007bff;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.a_final_Site:hover {
+  background-color: #0056b3;
+  border-color: #fff;
+  transform: scale(1.05);
+}
+
+.a_final_Site:active {
+  transform: scale(0.98);
 }
